@@ -1,0 +1,144 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-gutter: stable;
+}
+
+input{
+  outline: none;
+}
+
+.auto-grid{
+  display: grid;
+  gap:1rem;
+  grid-template-columns: 
+    repeat(auto-fit,minmax(18rem,1fr));
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px; /* Circular shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 24px; /* Adjust font size as needed */
+}
+
+.close-button:hover {
+  background-color: #eee;
+}
+
+.close-button:after {
+  content: 'x';
+  color: black;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #eee;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  max-width: 200px;
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+/* Para navegadores basados en WebKit (Chrome, Safari, Opera) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.scrollCard{
+  scrollbar-width: thin;
+  scrollbar-color: #006fee transparent;
+}
+
+.scrollComments{
+  scrollbar-width: thin;
+  scrollbar-color: #006fee transparent;
+
+}
+
+.scrollSkills{
+  scrollbar-width: thin;
+  scrollbar-color: #7828c8 transparent;
+
+}
+
+@layer base {
+  :root {
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
